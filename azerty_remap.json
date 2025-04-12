@@ -1,0 +1,58 @@
+{
+  "title": "AZERTY Coding Remapping (Clean)",
+  "rules": [
+    {
+      "description": "§ → [, ç → ], Option+8 → |, Option+C → ç, Option+§ → §",
+      "manipulators": [
+        // § → [ (default)
+        {
+          "from": { "key_code": "section" },
+          "to": [ { "key_code": "open_bracket" } ],
+          "type": "basic"
+        },
+        
+        // ç → ] (default)
+        {
+          "from": { "key_code": "semicolon" }, // ç is unshifted ; on AZERTY
+          "to": [ { "key_code": "close_bracket" } ],
+          "type": "basic"
+        },
+        
+        // Option+8 → | (pipe)
+        {
+          "from": { 
+            "key_code": "8",
+            "modifiers": { "mandatory": ["option"] }
+          },
+          "to": [ 
+            { 
+              "key_code": "backslash",
+              "modifiers": ["shift"]  // Shift+\ = | on US layout
+            }
+          ],
+          "type": "basic"
+        },
+        
+        // Option+C → ç (original ç)
+        {
+          "from": { 
+            "key_code": "c",
+            "modifiers": { "mandatory": ["option"] }
+          },
+          "to": [ { "key_code": "c" } ], // macOS converts Option+C → ç natively
+          "type": "basic"
+        },
+        
+        // Option+§ → § (original §)
+        {
+          "from": { 
+            "key_code": "section",
+            "modifiers": { "mandatory": ["option"] }
+          },
+          "to": [ { "key_code": "section" } ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}
