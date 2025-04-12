@@ -1,58 +1,38 @@
 {
-  "title": "AZERTY Coding Remapping (Clean)",
-  "rules": [
-    {
-      "description": "§ → [, ç → ], Option+8 → |, Option+C → ç, Option+§ → §",
-      "manipulators": [
-        // § → [ (default)
+    "description": "French AZERTY fixes",
+    "manipulators": [
         {
-          "from": { "key_code": "section" },
-          "to": [ { "key_code": "open_bracket" } ],
-          "type": "basic"
+            "from": { "key_code": "6" },
+            "to": [
+                {
+                    "key_code": "5",
+                    "modifiers": ["option", "left_shift"]
+                }
+            ],
+            "type": "basic"
         },
-        
-        // ç → ] (default)
         {
-          "from": { "key_code": "semicolon" }, // ç is unshifted ; on AZERTY
-          "to": [ { "key_code": "close_bracket" } ],
-          "type": "basic"
+            "from": {
+                "key_code": "8",
+                "modifiers": { "mandatory": ["option", "shift"] }
+            },
+            "to": [
+                {
+                    "key_code": "l",
+                    "modifiers": ["left_option", "left_shift"]
+                }
+            ],
+            "type": "basic"
         },
-        
-        // Option+8 → | (pipe)
         {
-          "from": { 
-            "key_code": "8",
-            "modifiers": { "mandatory": ["option"] }
-          },
-          "to": [ 
-            { 
-              "key_code": "backslash",
-              "modifiers": ["shift"]  // Shift+\ = | on US layout
-            }
-          ],
-          "type": "basic"
-        },
-        
-        // Option+C → ç (original ç)
-        {
-          "from": { 
-            "key_code": "c",
-            "modifiers": { "mandatory": ["option"] }
-          },
-          "to": [ { "key_code": "c" } ], // macOS converts Option+C → ç natively
-          "type": "basic"
-        },
-        
-        // Option+§ → § (original §)
-        {
-          "from": { 
-            "key_code": "section",
-            "modifiers": { "mandatory": ["option"] }
-          },
-          "to": [ { "key_code": "section" } ],
-          "type": "basic"
+            "from": { "key_code": "9" },
+            "to": [
+                {
+                    "key_code": "hyphen",
+                    "modifiers": ["option", "left_shift"]
+                }
+            ],
+            "type": "basic"
         }
-      ]
-    }
-  ]
+    ]
 }
